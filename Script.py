@@ -71,4 +71,55 @@ def combined_sequence_generator():
     except Exception as e:
         print(f"An error occurred: {e}")
 
-combined_sequence_generator()
+def test_cases():
+    print("=== Running Test Cases ===\n")
+    print("Arithmetic Sequence Test:")
+    print("-" * 40)
+
+    # Normal Test Cases
+
+    print("1. Normal Case - Positive difference:")
+    seq, sum_val = generate_arithmetic(2, 3, 5)
+    print(f"   Input: first_term=2, common_diff=3, num_terms=5")
+    print(f"   Output: {seq}, Sum: {sum_val}")
+    print(f"   Expected: [2, 5, 8, 11, 14], Sum: 40")
+    print(f"   ✓ PASS" if seq == [2, 5, 8, 11, 14] and sum_val == 40 else "   ✗ FAIL")
+
+    print("\n2. Normal Case - Negative difference:")
+    seq, sum_val = generate_arithmetic(10, -2, 4)
+    print(f"   Input: first_term=10, common_diff=-2, num_terms=4")
+    print(f"   Output: {seq}, Sum: {sum_val}")
+    print(f"   Expected: [10, 8, 6, 4], Sum: 28")
+    print(f"   ✓ PASS" if seq == [10, 8, 6, 4] and sum_val == 28 else "   ✗ FAIL")
+
+    print("\n3. Normal Case - Zero difference:")
+    seq, sum_val = generate_arithmetic(5, 0, 3)
+    print(f"   Input: first_term=5, common_diff=0, num_terms=3")
+    print(f"   Output: {seq}, Sum: {sum_val}")
+    print(f"   Expected: [5, 5, 5], Sum: 15")
+    print(f"   ✓ PASS" if seq == [5, 5, 5] and sum_val == 15 else "   ✗ FAIL")
+
+    # Edge Test Cases
+
+    print("\n4. Edge Case - First term is zero:")
+    seq, prod = generate_geometric(0, 5, 3)
+    print(f"   Input: first_term=0, common_ratio=5, num_terms=3")
+    print(f"   Output: {seq}, Product: {prod}")
+    print(f"   Expected: [0, 0, 0], Product: 0")
+    print(f"   ✓ PASS" if seq == [0, 0, 0] and prod == 0 else "   ✗ FAIL")
+
+    print("\n5. Edge Case - Single term:")
+    seq, prod = generate_geometric(5, 2, 1)
+    print(f"   Input: first_term=5, common_ratio=2, num_terms=1")
+    print(f"   Output: {seq}, Product: {prod}")
+    print(f"   Expected: [5], Product: 5")
+    print(f"   ✓ PASS" if seq == [5] and prod == 5 else "   ✗ FAIL")
+
+    print("\n6. Edge Case - Zero terms:")
+    seq, prod = generate_geometric(3, 2, 0)
+    print(f"   Input: first_term=3, common_ratio=2, num_terms=0")
+    print(f"   Output: {seq}, Product: {prod}")
+    print(f"   Expected: [], Product: 1")
+    print(f"   ✓ PASS" if seq == [] and prod == 1 else "   ✗ FAIL")
+
+    print("\n=== TEST CASES COMPLETED ===")
