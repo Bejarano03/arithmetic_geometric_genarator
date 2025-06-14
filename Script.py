@@ -123,3 +123,6 @@ def test_cases():
     print(f"   ✓ PASS" if seq == [] and prod == 1 else "   ✗ FAIL")
 
     print("\n=== TEST CASES COMPLETED ===")
+
+combined_sequence_generator()
+#test_cases()
