@@ -124,5 +124,5 @@ def test_cases():
 
     print("\n=== TEST CASES COMPLETED ===")
 
-combined_sequence_generator()
-#test_cases()
+#combined_sequence_generator()
+test_cases()
